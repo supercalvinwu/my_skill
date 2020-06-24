@@ -1,9 +1,5 @@
 import React from 'react';
-import CloudLogo from '../CloudLogo'
-import VMAvailable from './VMAvailable'
-import MainContentBeforeLogin from './MainContentBeforeLogin'
-import MainContentAfterLogin from './MainContentAfterLogin'
-import MainContentAdminView from './MainContentAdminView'
+import MainContentDemo from './MainContentDemo'
 
 function MainContent() {
 
@@ -15,25 +11,7 @@ function MainContent() {
     <div className="MainContent">
       <div className="wrapper">
 
-        <CloudLogo />
-
-        <VMAvailable />
-
-        {/* 
-          Conditional rendering
-          if the singed in user is admin  => show the admin view
-          else if user is signed in       => show after login view
-          else                            => show before login view 
-        */}
-
-        {
-          adminSignedIn
-            ? <MainContentAdminView />
-            : signedIn
-              ? <MainContentAfterLogin />
-              : <MainContentBeforeLogin />
-        }
-
+        <MainContentDemo />
 
       </div>
     </div>
