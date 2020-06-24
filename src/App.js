@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MasterWrapper from './component/MasterWrapper'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <MasterWrapper />
     </div>
   );
 }
