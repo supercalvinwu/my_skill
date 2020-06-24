@@ -75,6 +75,8 @@
 
   position: fixed;
   bottom: 0;
+
+  padding-bottom: 10px;
 }
 
 .Footer .wrapper{
@@ -170,6 +172,15 @@ button:focus {outline:0;}
   text-decoration: underline;
 }
 
+.CustomisedButton.D button{
+  background-color: #ffb625;
+  
+}
+
+.CustomisedButton.D button:hover{
+  background-color: #d99918;
+}
+
 /* ---------- main nav ---------- */
 .MainNav{
   display: flex;
@@ -200,6 +211,7 @@ button:focus {outline:0;}
   min-width: 50px;
   display: inline-block;
   text-align: initial;
+  font-weight: 600;
 }
 
 .ContactInfo .lable a{
@@ -207,4 +219,33 @@ button:focus {outline:0;}
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
+  transition: .4s;
+}
+
+.ContactInfo .lable a:hover{
+  color: #d7ff54;
+  text-decoration: underline;
+}
+
+/* ---------- mainContent after login ---------- */
+.MainContentAfterLogin{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+/* ---------- lending status user view ---------- */
+.LendingStatusUserView{
+  margin: 20px 0px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  cursor: default;
+}
+
+.LendingStatusUserView .lable{
+  font-size: 24px;
+  font-weight: 500;
 }
