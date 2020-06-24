@@ -1,9 +1,9 @@
 import React from 'react'
 import CustomisedButton from './CustomisedButton'
 
-function LendingStatusUserView() {
+function RentingStatusUserView() {
     return (
-        <div className="LendingStatusUserView">
+        <div className="RentingStatusUserView">
 
             <span className="lable">Num of VM that you are holding:</span>
 
@@ -24,4 +24,4 @@ function LendingStatusUserView() {
     )
 }
 
-export default LendingStatusUserView
+export default RentingStatusUserView

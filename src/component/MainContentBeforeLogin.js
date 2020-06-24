@@ -6,8 +6,8 @@ function MainContentBeforeLogin() {
         <div className="MainContentBeforeLogin">
             <CustomisedButton
                 type={'A'}
-                text={"Sign in to lend a VM"}
-                handler={() => { console.log("Sign in to lend a VM is clicked") }} />
+                text={"Sign in to rent a VM"}
+                handler={() => { console.log("Sign in to rent a VM is clicked") }} />
         </div>
     )
 }
