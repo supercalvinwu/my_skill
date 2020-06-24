@@ -3,9 +3,13 @@ import CloudLogo from './CloudLogo'
 import VMAvailable from './VMAvailable'
 import MainContentBeforeLogin from './MainContentBeforeLogin'
 import MainContentAfterLogin from './MainContentAfterLogin'
+import MainContentAdminView from './MainContentAdminView'
 
 function MainContent() {
-  const signedIn = true;
+
+  const signedIn = false;
+
+  const adminSignedIn = false;
 
   return (
     <div className="MainContent">
@@ -15,10 +19,19 @@ function MainContent() {
 
         <VMAvailable />
 
+        {/* 
+          Conditional rendering
+          if the singed in user is admin  => show the admin view
+          else if user is signed in       => show after login view
+          else                            => show before login view 
+        */}
+
         {
-          signedIn
-            ? <MainContentAfterLogin />
-            : <MainContentBeforeLogin />
+          adminSignedIn
+            ? <MainContentAdminView />
+            : signedIn
+              ? <MainContentAfterLogin />
+              : <MainContentBeforeLogin />
         }
 
 

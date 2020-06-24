@@ -14,7 +14,11 @@ function MainContentAfterLogin() {
                 text={"Rent a VM"}
                 handler={() => { console.log("Rent a VM is clicked") }} />
 
-            {/* show only when user are holding some VM */}
+            {/* 
+                Conditional rendering
+                if user rented some VM  => show the renting statue
+                otherwise               => show nth
+            */}
             {
                 userAreHoldingVM
                     ? <RentingStatusUserView />

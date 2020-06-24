@@ -115,7 +115,7 @@
 
 /* ---------- VM Available ---------- */
 .VMAvailable{
-  margin: 20px 0px;
+  margin: 15px 0px;
 
   display: flex;
   flex-flow: column;
@@ -248,4 +248,30 @@ button:focus {outline:0;}
 .RentingStatusUserView .lable{
   font-size: 24px;
   font-weight: 500;
+}
+
+/* ---------- main content admin view ---------- */
+.MainContentAdminView{
+  width: 400px;  
+}
+
+.MainContentAdminView table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.MainContentAdminView table, th, td{
+  border: 1px solid #ddd;
+  text-align: left;
+  cursor: default;
+}
+
+.MainContentAdminView th, td {
+  padding: 15px;
+}
+
+.MainContentAdminView td.amount{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
