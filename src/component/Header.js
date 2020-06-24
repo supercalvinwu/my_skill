@@ -1,5 +1,6 @@
 import React from 'react';
 import CalvinLogo from './CalvinLogo'
+import MainNav from './MainNav'
 
 function Header () {
   return (
@@ -8,12 +9,7 @@ function Header () {
 
           <CalvinLogo />
 
-          <div>
-            <h2>
-              menu bar 
-            </h2>
-          </div>
-
+          <MainNav />
 
         </div>
     </div>

@@ -127,14 +127,19 @@
   font-weight: 500;
 }
 
-/* ---------- CustomisedButton ---------- */
+/* ---------- customised button ---------- */
 .CustomisedButton button{
   border: 0px;
   border-radius: 20px;
   padding: 13px 20px;
   cursor: pointer;
   transition: .3s;
+
+  font-weight: 600;
+  font-size: 12px;
 }
+
+button:focus {outline:0;}
 
 .CustomisedButton.A button{
   background-color: #d7ff54;
@@ -142,4 +147,34 @@
 
 .CustomisedButton.A button:hover{
   background-color: #acc73e;
+}
+
+.CustomisedButton.B button{
+  background-color: black;
+  color: white;
+}
+
+.CustomisedButton.B button:hover{
+  background-color: grey;
+}
+
+.CustomisedButton.C button{
+  background-color: white;
+  padding: 13px 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.CustomisedButton.C button:hover{
+  color: #d7ff54;
+  text-decoration: underline;
+}
+
+/* ---------- main nav ---------- */
+.MainNav{
+  display: flex;
+}
+
+.MainNav > *{
+  margin-left: 10px;
 }
