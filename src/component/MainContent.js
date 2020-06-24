@@ -1,11 +1,19 @@
 import React from 'react';
+import CloudLogo from './CloudLogo'
+import VMAvailable from './VMAvailable'
+import CustomisedButton from './CustomisedButton'
 
-function MainContent () {
+function MainContent() {
   return (
     <div className="MainContent">
-        <div className="wrapper">
-          <h2>Main Content</h2>
-        </div>
+      <div className="wrapper">
+        <CloudLogo />
+        <VMAvailable />
+        <CustomisedButton
+          type={'A'}
+          text={"Sign in to lend a VM"}
+          handler={() => { console.log("Sign in to lend a VM is clicked") }} />
+      </div>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import Logo from './Logo'
+import CalvinLogo from './CalvinLogo'
 
 function Header () {
   return (
     <div className="Header">
         <div className="wrapper">
 
-          <Logo />
+          <CalvinLogo />
 
           <div>
             <h2>

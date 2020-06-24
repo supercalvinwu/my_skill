@@ -20,7 +20,6 @@
   
 }
 
-
 /* -------------------- header content -------------------- */
 .Header{
   /* background-color: yellow; */
@@ -55,11 +54,15 @@
 }
 
 .MainContent .wrapper{
-  background-color:orange;
+  /* background-color:orange; */
 
   width: 100%;
   max-width: 1168px;
   padding: 5px 16px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
 }
 
 /* -------------------- footer -------------------- */
@@ -87,8 +90,56 @@
   align-items: center;
 }
 
-/* -------------------- footer -------------------- */
-.Logo{
+/* ---------- calvin logo ---------- */
+.CalvinLogo{
   background-color: white;
   border-radius: 20%;
+
+  cursor: pointer;
+}
+
+/* ---------- cloud logo ---------- */
+.CloudLogo{
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+
+  cursor: default;
+}
+
+.CloudLogo > *{
+  margin: 20px;
+}
+
+/* ---------- VM Available ---------- */
+.VMAvailable{
+  margin: 20px 0px;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  cursor: default;
+}
+
+.VMAvailable .lable{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* ---------- CustomisedButton ---------- */
+.CustomisedButton button{
+  border: 0px;
+  border-radius: 20px;
+  padding: 13px 20px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.CustomisedButton.A button{
+  background-color: #d7ff54;
+}
+
+.CustomisedButton.A button:hover{
+  background-color: #acc73e;
 }
