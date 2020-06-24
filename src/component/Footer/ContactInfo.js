@@ -18,7 +18,7 @@ function ContactInfo() {
 
             <div>
                 <span className="lable">
-                    <a href="https://www.linkedin.com/in/calvin-wu-397aa9a1/">Linkedln</a>
+                    <a href="https://www.linkedin.com/in/calvin-wu-397aa9a1/" target="_blank">Linkedln</a>
                 </span>
             </div>
         </div>

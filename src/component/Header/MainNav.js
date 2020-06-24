@@ -24,6 +24,7 @@ function MainNav() {
                     : <CustomisedButton
                         type="B"
                         text="Sign in"
+                        path="/signin"
                         handler={() => { console.log("Sign in is clicked") }}
                     />
             }
@@ -32,12 +33,14 @@ function MainNav() {
             <CustomisedButton
                 type="C"
                 text="Demo"
+                path="/"
                 handler={() => { console.log("Demo is clicked") }}
             />
 
             <CustomisedButton
                 type="C"
                 text="Project"
+                path="/project"
                 handler={() => { console.log("Project is clicked") }}
             />
 
