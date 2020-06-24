@@ -7,8 +7,8 @@ import MainContentAdminView from './MainContentAdminView'
 
 function MainContent() {
 
+  // temporary fake data
   const signedIn = false;
-
   const adminSignedIn = false;
 
   return (

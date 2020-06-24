@@ -2,13 +2,13 @@ import React from 'react'
 import CustomisedButton from './CustomisedButton'
 
 function MainContentAdminView() {
+
+    // temporary fake data
     const rentingStatus = [
         { 'userName': 'Calvin Wu', amount: 4 },
         { 'userName': 'Joseph Tse', amount: 1 },
         { 'userName': 'Henry Chiu', amount: 3 }
     ]
-
-    // const rentingStatus = null
 
     return (
         <div className="MainContentAdminView">

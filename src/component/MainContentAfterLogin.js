@@ -4,7 +4,8 @@ import RentingStatusUserView from './RentingStatusUserView'
 
 function MainContentAfterLogin() {
 
-    const userAreHoldingVM = true;
+    // temporary fake data
+    const userAreHoldingVM = false;
 
     return (
         <div className="MainContentAfterLogin">
@@ -14,6 +15,7 @@ function MainContentAfterLogin() {
                 text={"Rent a VM"}
                 handler={() => { console.log("Rent a VM is clicked") }} />
 
+            <div style={{margin:20}} />
             {/* 
                 Conditional rendering
                 if user rented some VM  => show the renting statue

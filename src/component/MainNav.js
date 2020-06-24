@@ -2,6 +2,8 @@ import React from 'react'
 import CustomisedButton from './CustomisedButton'
 
 function MainNav() {
+
+    // temporary fake data
     const signedIn = false;
 
     return (
