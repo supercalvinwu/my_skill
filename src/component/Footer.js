@@ -1,5 +1,6 @@
 import React from 'react';
 import CalvinLogo from './CalvinLogo'
+import ContactInfo from './ContactInfo'
 
 function Footer () {
   return (
@@ -8,11 +9,7 @@ function Footer () {
 
         <CalvinLogo />
 
-        <div>
-          <h2>
-            contact
-          </h2>
-        </div>
+        <ContactInfo />
 
       </div>
     </div>

@@ -178,3 +178,33 @@ button:focus {outline:0;}
 .MainNav > *{
   margin-left: 10px;
 }
+
+/* ---------- contact info ---------- */
+.ContactInfo{
+  width: 200px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ContactInfo .title{
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.ContactInfo .lable{
+  min-width: 50px;
+  display: inline-block;
+  text-align: initial;
+}
+
+.ContactInfo .lable a{
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
