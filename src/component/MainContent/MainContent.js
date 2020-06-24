@@ -1,5 +1,5 @@
 import React from 'react';
-import CloudLogo from './CloudLogo'
+import CloudLogo from '../CloudLogo'
 import VMAvailable from './VMAvailable'
 import MainContentBeforeLogin from './MainContentBeforeLogin'
 import MainContentAfterLogin from './MainContentAfterLogin'

@@ -1,5 +1,5 @@
 import React from 'react';
-import CalvinLogo from './CalvinLogo'
+import CalvinLogo from '../CalvinLogo'
 import MainNav from './MainNav'
 
 function Header () {

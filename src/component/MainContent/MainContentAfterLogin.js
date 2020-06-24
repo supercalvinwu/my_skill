@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomisedButton from './CustomisedButton'
+import CustomisedButton from '../CustomisedButton'
 import RentingStatusUserView from './RentingStatusUserView'
 
 function MainContentAfterLogin() {
