@@ -10,18 +10,18 @@ function FirebaseTesting() {
     ])
 
     const meta = useSelector((state) => state.firestore.ordered.meta)
-    const users = useSelector((state) => state.firestore.ordered.users)
+    const user = useSelector((state) => state.firestore.ordered.user)
 
     if (!isLoaded(meta)) {
         return <div>Loading...</div>
     }
     
-    if (!isLoaded(users)) {
+    if (!isLoaded(user)) {
         return <div>Loading...</div>
     }
 
     console.log('meta: ',meta)
-    console.log('user: ',users)
+    console.log('user: ',user)
 
     return (
         <div className="FirebaseTesting">

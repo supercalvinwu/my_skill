@@ -1,10 +1,11 @@
 import React from 'react'
 import CustomisedButton from '../CustomisedButton'
+import { useSelector } from 'react-redux'
 
 function MainNav() {
 
-    // temporary fake data
-    const signedIn = false;
+    const user = useSelector((state) => state.user)
+    console.log('user: ',user)
 
     return (
         <div className="MainNav">
@@ -15,7 +16,7 @@ function MainNav() {
                 otherwise           => show sign in button
             */}
             {
-                signedIn
+                user.signedIn
                     ? <CustomisedButton
                         type="D"
                         text="Sign out"

@@ -7,9 +7,14 @@ import {
 
 // ------------------------ React Redux Firebase Setup ----------------------------------------------
 import {fbConfig} from './secret/fbConfig'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+import {applyMiddleware} from 'redux'
+import userReducer from './redux/user/userReducer'
+
 
 import { Provider } from 'react-redux'
-import firebase from 'firebase/app'
+import firebase, { app } from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore' // <- needed if using firestore
 // import 'firebase/functions' // <- needed if using httpsCallable
@@ -30,18 +35,20 @@ const rrfConfig = {
 firebase.initializeApp(fbConfig)
 
 // Initialize other services on firebase instance
-firebase.firestore() // <- needed if using firestore
+export var db = firebase.firestore() // <- needed if using firestore
 // firebase.functions() // <- needed if using httpsCallable
 
 // Add firebase to reducers
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
-  firestore: firestoreReducer // <- needed if using firestore
+  firestore: firestoreReducer, // <- needed if using firestore
+  user: userReducer
 })
 
 // Create store with reducers and initial state
 const initialState = {}
-const store = createStore(rootReducer, initialState)
+// const store = createStore(rootReducer, initialState,  applyMiddleware(logger, thunk))
+const store = createStore(rootReducer, initialState,  applyMiddleware(thunk))
 
 const rrfProps = {
   firebase,
