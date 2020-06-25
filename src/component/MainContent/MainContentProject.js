@@ -3,7 +3,7 @@ import React from 'react'
 function MainContentProject() {
     return (
         <div className="MainContentProject">
-            MainContentProject
+            My projects
         </div>
     )
 }

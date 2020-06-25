@@ -3,6 +3,7 @@ import MainContentDemo from './MainContentDemo'
 import MainContentSignIn from './MainContentSignIn'
 import MainContentProject from './MainContentProject'
 import FirebaseTesting from '../FirebaseTesting'
+import Debug from '../../Debug'
 
 import {
   Switch,
@@ -11,6 +12,7 @@ import {
 
 function MainContent() {
 
+  const debug = true;
   const firebaseDebug = false;
 
   if (firebaseDebug) {
@@ -20,6 +22,8 @@ function MainContent() {
   return (
     <div className="MainContent">
       <div className="wrapper">
+
+        {debug?<Debug/>:null}
 
         <Switch>
 

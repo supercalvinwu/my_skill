@@ -1,5 +1,4 @@
 import {FETCH_USER_SUCCESS, USER_SIGNOUT} from './userType'
-import axios from 'axios'
 
 export const fetchUserSuccess = (userInfo)=>{
     return {

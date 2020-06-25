@@ -22,8 +22,6 @@ function RentingStatusUserView() {
         return <LoadingSpinner color={"#ffb625"}/>
     }
 
-    console.log(userLive)
-
     return (
         <div className="RentingStatusUserView">
 

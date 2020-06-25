@@ -4,6 +4,7 @@ import RentingStatusUserView from './RentingStatusUserView'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 import LoadingSpinner from '../LoadingSpinner'
+import {rent_a_vm} from '../../share_function'
 
 function MainContentAfterLogin() {
 
@@ -22,16 +23,13 @@ function MainContentAfterLogin() {
         return <LoadingSpinner color={"#ffb625"} />
     }
 
-    console.log(userLive)
-
-
     return (
         <div className="MainContentAfterLogin">
 
             <CustomisedButton
                 type={'A'}
                 text={"Rent a VM"}
-                handler={() => { console.log("Rent a VM is clicked") }} />
+                handler={async() => { var {success, msg} = await rent_a_vm(user); if(!success){alert(msg)}}} />
 
             <div style={{ margin: 20 }} />
             {/* 

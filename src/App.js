@@ -47,8 +47,8 @@ const rootReducer = combineReducers({
 
 // Create store with reducers and initial state
 const initialState = {}
-const store = createStore(rootReducer, initialState,  applyMiddleware(logger, thunk))
-// const store = createStore(rootReducer, initialState, applyMiddleware(thunk))
+// const store = createStore(rootReducer, initialState,  applyMiddleware(logger, thunk))
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk))
 
 const rrfProps = {
   firebase,

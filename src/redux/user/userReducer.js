@@ -1,4 +1,4 @@
-import { USER_SIGNOUT, FETCH_USER_SUCCESS } from './userType'
+import { USER_SIGNOUT, FETCH_USER_SUCCESS, RENT_A_VM } from './userType'
 import { act } from 'react-dom/test-utils'
 
 const initialUserState = {
