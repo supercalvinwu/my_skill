@@ -78,7 +78,7 @@ export class MainContentSignIn extends Component {
                         <input type="text" value={this.state.value} onChange={this.handleIDChange} />
 
                         <span style={{ marginTop: 30 }} className="lable">PW:</span>
-                        <input type="text" value={this.state.value} onChange={this.handlePWChange} />
+                        <input type="password" value={this.state.value} onChange={this.handlePWChange} />
 
                         <input style={{ marginTop: 30 }} type="submit" value="Submit" />
 

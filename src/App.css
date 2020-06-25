@@ -271,9 +271,11 @@ button:focus {outline:0;}
 }
 
 .MainContentAdminView td.amount{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  padding-left: 15px;
+}
+.MainContentAdminView td.amount > *{
+  display: inline-block;
+  margin-left: 20px;
 }
 
 /* ---------- extrenal progress bar library ---------- */
@@ -385,7 +387,8 @@ button:focus {outline:0;}
 }
 
 
-.MainContentSignIn input[type=text]{
+.MainContentSignIn input[type=text],
+.MainContentSignIn input[type=password]{
   padding: 5px;
   border: none;
   border-bottom: 2px solid grey;
@@ -394,7 +397,8 @@ button:focus {outline:0;}
   font-weight: 600;
 }
 
-.MainContentSignIn input[type=text]:hover{
+.MainContentSignIn input[type=text]:hover,
+.MainContentSignIn input[type=password]:hover{
   border: none;
   border-bottom: 2px solid #d7ff54;
 }
