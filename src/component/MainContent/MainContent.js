@@ -2,6 +2,7 @@ import React from 'react';
 import MainContentDemo from './MainContentDemo'
 import MainContentSignIn from './MainContentSignIn'
 import MainContentProject from './MainContentProject'
+import FirebaseTesting from '../FirebaseTesting'
 
 import {
   Switch,
@@ -10,9 +11,11 @@ import {
 
 function MainContent() {
 
-  // temporary fake data
-  const signedIn = false;
-  const adminSignedIn = false;
+  const firebaseDebug = false;
+
+  if (firebaseDebug) {
+    return <FirebaseTesting />
+  }
 
   return (
     <div className="MainContent">
