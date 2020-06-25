@@ -2,10 +2,12 @@ import React from 'react'
 import CustomisedButton from '../CustomisedButton'
 import { useSelector } from 'react-redux'
 
-function MainNav() {
+import {userSignout} from '../../redux'
+import {useDispatch} from 'react-redux'
 
+function MainNav() {
+    const dispatch = useDispatch()
     const user = useSelector((state) => state.user)
-    console.log('user: ',user)
 
     return (
         <div className="MainNav">
@@ -20,7 +22,7 @@ function MainNav() {
                     ? <CustomisedButton
                         type="D"
                         text="Sign out"
-                        handler={() => { console.log("Sign out is clicked") }}
+                        handler={() => { console.log("Sign out is clicked"); dispatch(userSignout()); }}
                     />
                     : <CustomisedButton
                         type="B"

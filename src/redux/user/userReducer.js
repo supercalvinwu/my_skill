@@ -1,16 +1,16 @@
-import {FETCH_USER_FAILURE, FETCH_USER_REQUEST, FETCH_USER_SUCCESS} from './userType'
+import { USER_SIGNOUT, FETCH_USER_SUCCESS } from './userType'
 import { act } from 'react-dom/test-utils'
 
 const initialUserState = {
     signedIn: false,
     name: "",
-    id:"",
-    max:null,
-    vm_rented:null
+    id: "",
+    max: null,
+    vm_rented: null
 }
 
 const userReducer = (state = initialUserState, action) => {
-    switch (action.type){
+    switch (action.type) {
         case FETCH_USER_SUCCESS:
             return {
                 ...state,
@@ -19,6 +19,15 @@ const userReducer = (state = initialUserState, action) => {
                 id: action.payload.id,
                 max: action.payload.max,
                 vm_rented: action.payload.vm_rented
+            }
+        case USER_SIGNOUT:
+            return {
+                ...state,
+                signedIn: false,
+                name: "",
+                id: "",
+                max: null,
+                vm_rented: null
             }
         default:
             return state
