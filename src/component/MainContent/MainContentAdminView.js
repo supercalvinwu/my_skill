@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 import LoadingSpinner from '../LoadingSpinner'
 import { firestore } from 'firebase'
+import { admin_release_vm } from '../../share_function'
 
 function MainContentAdminView() {
 
@@ -14,8 +15,8 @@ function MainContentAdminView() {
     ])
 
     const meta = useSelector((state) => state.firestore.ordered.meta)
-    const users = useSelector((state) => state.firestore.data.users) 
-    
+    const users = useSelector((state) => state.firestore.data.users)
+
     if (!isLoaded(meta)) {
         return <LoadingSpinner color={"#ffb625"} />
     }
@@ -65,11 +66,21 @@ function MainContentAdminView() {
                                                 <CustomisedButton
                                                     type={'D'}
                                                     text={"-1"}
-                                                    handler={() => { console.log("-1 is clicked") }} />
+                                                    handler={async () => {
+                                                        var { success, msg } = await admin_release_vm(user, true);
+                                                        if (!success) {
+                                                            alert(msg)
+                                                        }
+                                                    }} />
                                                 <CustomisedButton
                                                     type={'D'}
                                                     text={"Release all"}
-                                                    handler={() => { console.log("Release all is clicked") }} />
+                                                    handler={async () => {
+                                                        var { success, msg } = await admin_release_vm(user, false);
+                                                        if (!success) {
+                                                            alert(msg)
+                                                        }
+                                                    }} />
                                             </td>
                                         </tr>)
                                     : (
