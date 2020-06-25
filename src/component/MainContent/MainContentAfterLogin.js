@@ -1,11 +1,11 @@
 import React from 'react'
 import CustomisedButton from '../CustomisedButton'
 import RentingStatusUserView from './RentingStatusUserView'
+import { useSelector } from 'react-redux'
 
 function MainContentAfterLogin() {
 
-    // temporary fake data
-    const userAreHoldingVM = false;
+    const user = useSelector((state) => state.user)
 
     return (
         <div className="MainContentAfterLogin">
@@ -22,7 +22,7 @@ function MainContentAfterLogin() {
                 otherwise               => show nth
             */}
             {
-                userAreHoldingVM
+                (user.vm_rented > 0)
                     ? <RentingStatusUserView />
                     : null
             }

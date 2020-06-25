@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 
 import CloudLogo from '../CloudLogo'
 import VMAvailable from './VMAvailable'
@@ -11,9 +10,7 @@ import MainContentAdminView from './MainContentAdminView'
 
 function MainContentDemo() {
 
-    // temporary fake data
-    const signedIn = false;
-    const adminSignedIn = false;
+    const user = useSelector((state) => state.user)
 
     return (
         <div className="MainContentDemo">
@@ -31,12 +28,21 @@ function MainContentDemo() {
                 */}
 
                 {
+                    user.signedIn
+                        ? (user.id == "admin")
+                            ? <MainContentAdminView />
+                            : <MainContentAfterLogin />
+                        : <MainContentBeforeLogin />
+                
+                }
+
+                {/* {
                     adminSignedIn
                         ? <MainContentAdminView />
-                        : signedIn
+                        : user.signedIn
                             ? <MainContentAfterLogin />
                             : <MainContentBeforeLogin />
-                }
+                } */}
 
 
             </div>

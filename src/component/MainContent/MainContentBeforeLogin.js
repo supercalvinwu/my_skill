@@ -1,15 +1,16 @@
 import React from 'react'
 import CustomisedButton from '../CustomisedButton'
+import {withRouter} from 'react-router-dom';
 
-function MainContentBeforeLogin() {
+function MainContentBeforeLogin(props) {
     return (
         <div className="MainContentBeforeLogin">
             <CustomisedButton
-                type={'A'}
+                type={'B'}
                 text={"Sign in to rent a VM"}
-                handler={() => { console.log("Sign in to rent a VM is clicked") }} />
+                handler={() => { console.log("Sign in to rent a VM is clicked"); props.history.push('/signin'); }} />
         </div>
     )
 }
 
-export default MainContentBeforeLogin
+export default withRouter(MainContentBeforeLogin);

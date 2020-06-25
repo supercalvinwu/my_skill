@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 
 import ProgressBar from 'react-flexible-progressbar'
-import LoadingSpiner from '../LoadingSpinner'
+import LoadingSpinner from '../LoadingSpinner'
 
 function VMAvailable() {
 
@@ -16,7 +16,7 @@ function VMAvailable() {
     const meta = useSelector((state) => state.firestore.ordered.meta)
 
     if (!isLoaded(meta)) {
-        return <LoadingSpiner color={"#55d41f"}/>
+        return <LoadingSpinner color={"#d7ff54"}/>
     }
     
     const vm_info = meta[0]

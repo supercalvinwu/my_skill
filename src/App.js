@@ -6,10 +6,10 @@ import {
 } from "react-router-dom";
 
 // ------------------------ React Redux Firebase Setup ----------------------------------------------
-import {fbConfig} from './secret/fbConfig'
+import { fbConfig } from './secret/fbConfig'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
-import {applyMiddleware} from 'redux'
+import { applyMiddleware } from 'redux'
 import userReducer from './redux/user/userReducer'
 
 
@@ -48,7 +48,7 @@ const rootReducer = combineReducers({
 // Create store with reducers and initial state
 const initialState = {}
 // const store = createStore(rootReducer, initialState,  applyMiddleware(logger, thunk))
-const store = createStore(rootReducer, initialState,  applyMiddleware(thunk))
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk))
 
 const rrfProps = {
   firebase,
@@ -56,7 +56,7 @@ const rrfProps = {
   dispatch: store.dispatch,
   createFirestoreInstance // <- needed if using firestore
 }
- 
+
 // ------------------------------------------------------------------------------------
 
 function App() {

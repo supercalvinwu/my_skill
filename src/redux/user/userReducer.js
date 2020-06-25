@@ -3,9 +3,10 @@ import { act } from 'react-dom/test-utils'
 
 const initialUserState = {
     signedIn: false,
+    doc: "",
     name: "",
     id: "",
-    max: null,
+    max_rent: null,
     vm_rented: null
 }
 
@@ -15,18 +16,20 @@ const userReducer = (state = initialUserState, action) => {
             return {
                 ...state,
                 signedIn: true,
+                doc: action.payload.doc,
                 name: action.payload.name,
                 id: action.payload.id,
-                max: action.payload.max,
+                max_rent: action.payload.max_rent,
                 vm_rented: action.payload.vm_rented
             }
         case USER_SIGNOUT:
             return {
                 ...state,
                 signedIn: false,
+                doc: "",
                 name: "",
                 id: "",
-                max: null,
+                max_rent: null,
                 vm_rented: null
             }
         default:

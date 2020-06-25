@@ -10,7 +10,7 @@ export class MainContentSignIn extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { id: "", pw: "" };
+        this.state = { id: "", pw: "", err: "" };
 
         this.handleIDChange = this.handleIDChange.bind(this);
         this.handlePWChange = this.handlePWChange.bind(this);
@@ -42,7 +42,10 @@ export class MainContentSignIn extends Component {
                     id_pw_match = true
                     querySnapshot.forEach(function (doc) {
                         // doc.data() is never undefined for query doc snapshots
-                        fetchedUser = doc.data();
+                        fetchedUser = {
+                            ...doc.data(),
+                            doc: doc.id
+                        }
                     });
                 }
             })
@@ -52,6 +55,7 @@ export class MainContentSignIn extends Component {
                     this.props.fetchUserSuccess(fetchedUser);
                 } else {
                     // show id pw wrong view
+                    this.setState({ err: "Wrong ID PW" })
                 }
             })
             .catch(function (error) {
@@ -77,6 +81,11 @@ export class MainContentSignIn extends Component {
                         <input type="text" value={this.state.value} onChange={this.handlePWChange} />
 
                         <input style={{ marginTop: 30 }} type="submit" value="Submit" />
+
+                        <h4 style={{ color: "red" }}>
+                            {this.state.err}
+                        </h4>
+
                     </form>
 
                 </div>
