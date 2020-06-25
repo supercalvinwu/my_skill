@@ -34,7 +34,7 @@ function MainContentAdminView() {
     }
 
     return (
-        <div className="MainContentAdminView">
+        <div style={{marginTop:40}} className="MainContentAdminView">
             <table>
                 <tbody>
                     <tr>

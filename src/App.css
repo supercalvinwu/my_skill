@@ -77,6 +77,8 @@
   bottom: 0;
 
   padding: 10px 0px;
+
+  opacity: 88%;
 }
 
 .Footer > .wrapper{
@@ -90,6 +92,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 /* ---------- calvin logo ---------- */
