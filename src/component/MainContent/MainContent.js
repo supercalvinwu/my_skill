@@ -12,7 +12,7 @@ import {
 
 function MainContent() {
 
-  const debug = true;
+  const debug = false;
   const firebaseDebug = false;
 
   if (firebaseDebug) {

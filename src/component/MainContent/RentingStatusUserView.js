@@ -4,6 +4,7 @@ import ProgressBar from 'react-flexible-progressbar'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 import LoadingSpinner from '../LoadingSpinner'
+import {user_release_a_vm} from '../../share_function'
 
 function RentingStatusUserView() {
 
@@ -19,7 +20,7 @@ function RentingStatusUserView() {
     )
 
     if (!isLoaded(userLive)) {
-        return <LoadingSpinner color={"#ffb625"}/>
+        return <LoadingSpinner color={"#ffb625"} />
     }
 
     return (
@@ -45,7 +46,12 @@ function RentingStatusUserView() {
                 <CustomisedButton
                     type={'D'}
                     text={"Release a VM"}
-                    handler={() => { console.log("Release a VM is clicked") }}
+                    handler={async () => {
+                        var { success, msg } = await user_release_a_vm(user);
+                        if (!success) {
+                            alert(msg)
+                        }
+                    }}
                 />
             </div>
 

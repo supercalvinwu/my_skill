@@ -367,6 +367,8 @@ button:focus {outline:0;}
   display: flex;
   flex-flow: column;
   align-items: flex-start;
+
+  margin-bottom: 300px;
 }
 
 /* ---------- main content signin ---------- */

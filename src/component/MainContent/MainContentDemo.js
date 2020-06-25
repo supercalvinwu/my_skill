@@ -17,7 +17,7 @@ function MainContentDemo() {
             <div className="wrapper">
 
                 <CloudLogo />
-
+                
                 <VMAvailable />
 
                 {/* 
