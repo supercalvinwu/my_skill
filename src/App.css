@@ -436,3 +436,80 @@ button:focus {outline:0;}
   font-weight: 500;
 }
 
+/* ---------- main content project ---------- */
+.MainContentProject{
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+
+  margin-bottom: 350px;
+
+}
+
+.MainContentProject .lable{
+  font-size: 24px;
+  font-weight: 500;
+
+  align-self: flex-start;
+  margin-bottom: 20px;
+  cursor: default;
+}
+
+.MainContentProject .project_obtion{
+  display: flex;
+  justify-content: space-around;
+
+  width: 400px;
+}
+
+/* ---------- project ---------- */
+.Project{
+  margin-top: 35px;
+
+  display: flex;
+  flex-flow: column;
+}
+
+.Project .title{
+  font-size: 30px;
+  font-weight: 500;
+  align-self: flex-start;
+  cursor: default;
+}
+
+.Project .lable{
+  cursor: default;
+}
+
+.Project .slick-slider{
+  width: 450px;
+  margin-bottom: 60px;
+  display: block;
+}
+
+.Project .slick-slider img{
+  border-radius: 30px;
+  margin: 20px;
+}
+
+
+.Project a{
+  font-size: 15px;
+  font-weight: 500;
+  align-self: flex-start;
+  text-align: left;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.Project a:hover{
+  text-decoration: none;
+  color: #d7ff54 !important;
+}
+
+
+.Project a:visited{
+  text-decoration: none;
+  color: black;
+}

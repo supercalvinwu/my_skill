@@ -14,6 +14,9 @@
 # secret key
 /src/secret
 
+# firebase hosting info
+/.firebase
+
 # misc
 .DS_Store
 .env.local

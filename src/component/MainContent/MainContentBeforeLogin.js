@@ -3,6 +3,7 @@ import CustomisedButton from '../CustomisedButton'
 import {withRouter} from 'react-router-dom';
 
 function MainContentBeforeLogin(props) {
+    console.log(props)
     return (
         <div className="MainContentBeforeLogin">
             <CustomisedButton
