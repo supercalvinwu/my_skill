@@ -1,4 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
+
 import CloudLogo from '../CloudLogo'
 import VMAvailable from './VMAvailable'
 import MainContentBeforeLogin from './MainContentBeforeLogin'

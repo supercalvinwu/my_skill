@@ -2,18 +2,17 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 
-
 function FirebaseTesting() {
 
     useFirestoreConnect([
-        { collection: 'test' },
+        { collection: 'meta' },
         { collection: 'users' }
     ])
 
-    const test = useSelector((state) => state.firestore.ordered.test)
+    const meta = useSelector((state) => state.firestore.ordered.meta)
     const users = useSelector((state) => state.firestore.ordered.users)
 
-    if (!isLoaded(test)) {
+    if (!isLoaded(meta)) {
         return <div>Loading...</div>
     }
     
@@ -21,7 +20,7 @@ function FirebaseTesting() {
         return <div>Loading...</div>
     }
 
-    console.log('test: ',test)
+    console.log('meta: ',meta)
     console.log('user: ',users)
 
     return (
