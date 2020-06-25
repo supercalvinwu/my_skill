@@ -366,3 +366,59 @@ button:focus {outline:0;}
   flex-flow: column;
   align-items: flex-start;
 }
+
+/* ---------- main content signin ---------- */
+.MainContentSignIn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.MainContentSignIn form{
+  display: flex;
+  flex-flow: column;
+}
+
+
+.MainContentSignIn input {
+  transition: .3s;
+}
+
+
+.MainContentSignIn input[type=text]{
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid grey;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.MainContentSignIn input[type=text]:hover{
+  border: none;
+  border-bottom: 2px solid #d7ff54;
+}
+
+.MainContentSignIn input:focus {
+  outline:0;
+  border-bottom: 2px solid #d7ff54;
+}
+
+.MainContentSignIn input[type=submit]{
+  border: none;
+  background-color: #d7ff54;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.MainContentSignIn input[type=submit]:hover{
+  background-color: #acc73e;
+}
+
+.MainContentSignIn .lable{
+  align-self: start;
+  font-size: 24px;
+  font-weight: 500;
+}
+

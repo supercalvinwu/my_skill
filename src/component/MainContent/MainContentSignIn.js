@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { fetchUserSuccess } from '../../redux'
 import { connect } from 'react-redux'
 import { db } from '../../App'
+import { Redirect } from 'react-router-dom'
 
-import  { Redirect } from 'react-router-dom'
+import { CustomisedButton } from '../CustomisedButton'
 
 export class MainContentSignIn extends Component {
 
@@ -14,7 +15,6 @@ export class MainContentSignIn extends Component {
         this.handleIDChange = this.handleIDChange.bind(this);
         this.handlePWChange = this.handlePWChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this)
-
     }
 
     handleIDChange(e) {
@@ -64,24 +64,21 @@ export class MainContentSignIn extends Component {
 
     render() {
         if (this.props.user.signedIn) {
-            return (<Redirect to='/'  />)
+            return (<Redirect to='/' />)
         } else {
             return (
                 <div className="MainContentSignIn">
+
                     <form onSubmit={this.handleSubmit}>
-
-                        <label>
-                            ID:
+                        <span style={{ marginTop: 10 }} className="lable">ID:</span>
                         <input type="text" value={this.state.value} onChange={this.handleIDChange} />
-                        </label>
 
-                        <label>
-                            PW:
+                        <span style={{ marginTop: 30 }} className="lable">PW:</span>
                         <input type="text" value={this.state.value} onChange={this.handlePWChange} />
-                        </label>
 
-                        <input type="submit" value="Submit" />
+                        <input style={{ marginTop: 30 }} type="submit" value="Submit" />
                     </form>
+
                 </div>
             )
         }
