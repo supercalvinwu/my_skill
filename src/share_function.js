@@ -6,9 +6,7 @@ export const admin_release_vm = async (user, single = false) => {
     var userDoc = null;
     var vm_info = null;
 
-
-
-    db.collection("users").where("id", "==", user.id)
+    await db.collection("users").where("id", "==", user.id)
         .get()
         .then(function (querySnapshot) {
             if (querySnapshot.size == 1) {
