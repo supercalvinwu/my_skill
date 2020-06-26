@@ -6,7 +6,7 @@ import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 import LoadingSpinner from '../LoadingSpinner'
 import {user_release_a_vm} from '../../share_function'
 
-function RentingStatusUserView() {
+function BorrowingStatusUserView() {
 
     var user = useSelector((state) => state.user)
 
@@ -24,22 +24,22 @@ function RentingStatusUserView() {
     }
 
     return (
-        <div className="RentingStatusUserView">
+        <div className="BorrowingStatusUserView">
 
             <span className="lable">Num of VM that you are holding:</span>
 
             <div style={{ marginTop: 15, marginBottom: 5 }}>
 
-                <span style={{ fontSize: 12, fontWeight: 400 }}>You may rent a maximum of {userLive.max_rent} VM and you have rented </span>
+                <span style={{ fontSize: 12, fontWeight: 400 }}>You may borrow a maximum of {userLive.max_borrow} VM and you have borrowed </span>
 
-                <span style={{ fontSize: 25, fontWeight: 600 }}>{userLive.vm_rented}</span>
+                <span style={{ fontSize: 25, fontWeight: 600 }}>{userLive.vm_borrowed}</span>
 
             </div>
 
             <ProgressBar
                 width={350}
                 height={20}
-                progress={userLive.vm_rented / userLive.max_rent * 100}
+                progress={userLive.vm_borrowed / userLive.max_borrow * 100}
             />
 
             <div style={{ 'marginTop': '20px' }}>
@@ -60,4 +60,4 @@ function RentingStatusUserView() {
     )
 }
 
-export default RentingStatusUserView
+export default BorrowingStatusUserView

@@ -238,8 +238,8 @@ button:focus {outline:0;}
   align-items: flex-start;
 }
 
-/* ---------- Renting status user view ---------- */
-.RentingStatusUserView{
+/* ---------- Borrowing status user view ---------- */
+.BorrowingStatusUserView{
   margin: 20px 0px;
 
   display: flex;
@@ -249,7 +249,7 @@ button:focus {outline:0;}
   cursor: default;
 }
 
-.RentingStatusUserView .lable{
+.BorrowingStatusUserView .lable{
   font-size: 24px;
   font-weight: 500;
 }
@@ -349,7 +349,7 @@ button:focus {outline:0;}
   background-color: #55d41f;
 }
 
-.RentingStatusUserView .react-flexible-progressbar .rf-progressbar > div {
+.BorrowingStatusUserView .react-flexible-progressbar .rf-progressbar > div {
   background-color: #ff7316;
 }
 

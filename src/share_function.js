@@ -40,12 +40,12 @@ export const admin_release_vm = async (user, single = false) => {
 
 
     if (userFound) {
-        if (userFound.vm_rented > 0) {
-            // if user rented at leant 1 vm
+        if (userFound.vm_borrowed > 0) {
+            // if user borrowed at leant 1 vm
 
             // then help user release 1 / some vm
             db.collection("users").doc(userDoc).update({
-                vm_rented: single ? userFound.vm_rented - 1 : 0
+                vm_borrowed: single ? userFound.vm_borrowed - 1 : 0
             })
                 .then(function () {
 
@@ -56,7 +56,7 @@ export const admin_release_vm = async (user, single = false) => {
 
             // also renew the count of available vm
             db.collection("meta").doc("vm_info").update({
-                been_rented: single ? vm_info.been_rented - 1 : vm_info.been_rented - userFound.vm_rented
+                been_borrowed: single ? vm_info.been_borrowed - 1 : vm_info.been_borrowed - userFound.vm_borrowed
             })
                 .then(function () {
 
@@ -69,7 +69,7 @@ export const admin_release_vm = async (user, single = false) => {
 
 
         } else {
-            return ({ success: false, msg: "No VM was rented under this user account" })
+            return ({ success: false, msg: "No VM was borrowed under this user account" })
         }
     }else{
         return ({ success: false, msg: "User not found" })
@@ -113,12 +113,12 @@ export const user_release_a_vm = async (user) => {
         });
 
         if (userFound) {
-            if (userFound.vm_rented > 0) {
-                // if user's have really rented at least a vm before
+            if (userFound.vm_borrowed > 0) {
+                // if user's have really borrowed at least a vm before
 
                 // then help user to release one more vm
                 db.collection("users").doc(user.doc).update({
-                    vm_rented: userFound.vm_rented - 1
+                    vm_borrowed: userFound.vm_borrowed - 1
                 })
                     .then(function () {
 
@@ -129,7 +129,7 @@ export const user_release_a_vm = async (user) => {
 
                 // also mark that available vm +1
                 db.collection("meta").doc("vm_info").update({
-                    been_rented: vm_info.been_rented == 0 ? 0 : vm_info.been_rented - 1
+                    been_borrowed: vm_info.been_borrowed == 0 ? 0 : vm_info.been_borrowed - 1
                 })
                     .then(function () {
 
@@ -143,7 +143,7 @@ export const user_release_a_vm = async (user) => {
 
             } else {
                 console.log("exceed")
-                return ({ success: false, msg: "No VM was rented under your account" })
+                return ({ success: false, msg: "No VM was borrowed under your account" })
             }
         }
 
@@ -155,7 +155,7 @@ export const user_release_a_vm = async (user) => {
 
 }
 
-export const rent_a_vm = async (user) => {
+export const borrow_a_vm = async (user) => {
 
     // check if user is signed in
     if (user.signedIn) {
@@ -192,14 +192,14 @@ export const rent_a_vm = async (user) => {
 
 
         if (userFound) {
-            if (userFound.max_rent - userFound.vm_rented > 0) {
-                // if user's max_rent < (vm_rented + 1)
-                if (vm_info.total - vm_info.been_rented > 0) {
-                    // if server still have more available vm to be rented
+            if (userFound.max_borrow - userFound.vm_borrowed > 0) {
+                // if user's max_borrow < (vm_borrowed + 1)
+                if (vm_info.total - vm_info.been_borrowed > 0) {
+                    // if server still have more available vm to be borrowed
 
-                    // then help user to rent one more vm
+                    // then help user to borrow one more vm
                     db.collection("users").doc(user.doc).update({
-                        vm_rented: userFound.vm_rented + 1
+                        vm_borrowed: userFound.vm_borrowed + 1
                     })
                         .then(function () {
 
@@ -210,7 +210,7 @@ export const rent_a_vm = async (user) => {
 
                     // also mark that available vm -1
                     db.collection("meta").doc("vm_info").update({
-                        been_rented: vm_info.been_rented + 1
+                        been_borrowed: vm_info.been_borrowed + 1
                     })
                         .then(function () {
 
@@ -227,7 +227,7 @@ export const rent_a_vm = async (user) => {
                 }
             } else {
                 console.log("exceed")
-                return ({ success: false, msg: "You can only rent " + userFound.max_rent + " VM" })
+                return ({ success: false, msg: "You can only borrow " + userFound.max_borrow + " VM" })
             }
         }
 

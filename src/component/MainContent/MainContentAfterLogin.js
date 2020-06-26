@@ -1,10 +1,10 @@
 import React from 'react'
 import CustomisedButton from '../CustomisedButton'
-import RentingStatusUserView from './RentingStatusUserView'
+import BorrowingStatusUserView from './BorrowingStatusUserView'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase'
 import LoadingSpinner from '../LoadingSpinner'
-import {rent_a_vm} from '../../share_function'
+import {borrow_a_vm} from '../../share_function'
 
 function MainContentAfterLogin() {
 
@@ -28,18 +28,18 @@ function MainContentAfterLogin() {
 
             <CustomisedButton
                 type={'A'}
-                text={"Rent a VM"}
-                handler={async() => { var {success, msg} = await rent_a_vm(user); if(!success){alert(msg)}}} />
+                text={"Borrow a VM"}
+                handler={async() => { var {success, msg} = await borrow_a_vm(user); if(!success){alert(msg)}}} />
 
             <div style={{ margin: 20 }} />
             {/* 
                 Conditional rendering
-                if user rented some VM  => show the renting statue
+                if user borrowed some VM  => show the borrowing statue
                 otherwise               => show nth
             */}
             {
-                (userLive.vm_rented > 0)
-                    ? <RentingStatusUserView />
+                (userLive.vm_borrowed > 0)
+                    ? <BorrowingStatusUserView />
                     : null
             }
 

@@ -21,7 +21,7 @@ function VMAvailable() {
     
     const vm_info = meta[0]
     const vm_total = vm_info.total
-    const vm_been_rented = vm_info.been_rented
+    const vm_been_borrowed = vm_info.been_borrowed
     
     // ------------------------------------------------------------
 
@@ -32,16 +32,16 @@ function VMAvailable() {
 
             <div style={{marginTop:15, marginBottom:5}}>
 
-                <span style={{fontSize:25, fontWeight:600}}>{vm_total - vm_been_rented}</span>
+                <span style={{fontSize:25, fontWeight:600}}>{vm_total - vm_been_borrowed}</span>
 
-                <span style={{fontSize:12, fontWeight:400}}> / {vm_total} VM are available to be rented</span>
+                <span style={{fontSize:12, fontWeight:400}}> / {vm_total} VM are available to be borrowed</span>
 
             </div>
 
             <ProgressBar
                 width={350}
                 height={20}
-                progress={(vm_total - vm_been_rented) / vm_total * 100}
+                progress={(vm_total - vm_been_borrowed) / vm_total * 100}
             />
 
         </div>

@@ -1,4 +1,4 @@
-import { USER_SIGNOUT, FETCH_USER_SUCCESS, RENT_A_VM } from './userType'
+import { USER_SIGNOUT, FETCH_USER_SUCCESS, BORROW_A_VM } from './userType'
 import { act } from 'react-dom/test-utils'
 
 const initialUserState = {
@@ -6,8 +6,8 @@ const initialUserState = {
     doc: "",
     name: "",
     id: "",
-    max_rent: null,
-    vm_rented: null
+    max_borrow: null,
+    vm_borrowed: null
 }
 
 const userReducer = (state = initialUserState, action) => {
@@ -19,8 +19,8 @@ const userReducer = (state = initialUserState, action) => {
                 doc: action.payload.doc,
                 name: action.payload.name,
                 id: action.payload.id,
-                max_rent: action.payload.max_rent,
-                vm_rented: action.payload.vm_rented
+                max_borrow: action.payload.max_borrow,
+                vm_borrowed: action.payload.vm_borrowed
             }
         case USER_SIGNOUT:
             return {
@@ -29,8 +29,8 @@ const userReducer = (state = initialUserState, action) => {
                 doc: "",
                 name: "",
                 id: "",
-                max_rent: null,
-                vm_rented: null
+                max_borrow: null,
+                vm_borrowed: null
             }
         default:
             return state

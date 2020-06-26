@@ -8,8 +8,8 @@ function MainContentBeforeLogin(props) {
         <div className="MainContentBeforeLogin">
             <CustomisedButton
                 type={'B'}
-                text={"Sign in to rent a VM"}
-                handler={() => { console.log("Sign in to rent a VM is clicked"); props.history.push('/signin'); }} />
+                text={"Sign in to borrow a VM"}
+                handler={() => { console.log("Sign in to borrow a VM is clicked"); props.history.push('/signin'); }} />
         </div>
     )
 }

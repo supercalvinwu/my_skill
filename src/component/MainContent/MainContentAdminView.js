@@ -25,11 +25,11 @@ function MainContentAdminView() {
         return <LoadingSpinner color={"#ffb625"} />
     }
 
-    var rentorArray = []
+    var borrowerArray = []
     for (var doc in users) {
         console.log(users[doc])
-        if (users[doc].vm_rented > 0) {
-            rentorArray.push(users[doc]);
+        if (users[doc].vm_borrowed > 0) {
+            borrowerArray.push(users[doc]);
         }
     }
 
@@ -48,21 +48,21 @@ function MainContentAdminView() {
 
                     {/* 
                     Conditional rendering,
-                    if VM are rented by some user   => status will be list out
+                    if VM are borrowed by some user   => status will be list out
                     otherwise                       => nth 
                 */}
                     {
-                        rentorArray && rentorArray.length > 0
+                        borrowerArray && borrowerArray.length > 0
                             ?
-                            rentorArray.map((user, index) => {
-                                return (user.vm_rented > 0)
+                            borrowerArray.map((user, index) => {
+                                return (user.vm_borrowed > 0)
                                     ? (
                                         <tr key={'tr' + user.name}>
                                             <td key={'td1' + user.name}>
                                                 {user.name}
                                             </td>
                                             <td key={'td2' + user.name} className="amount">
-                                                {user.vm_rented}
+                                                {user.vm_borrowed}
                                                 <CustomisedButton
                                                     type={'D'}
                                                     text={"-1"}
