@@ -17,7 +17,8 @@ function SmartEat() {
         autoplaySpeed: 3000,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows : false
     };
 
     return (
@@ -26,16 +27,16 @@ function SmartEat() {
 
             <Slider {...settings}>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={se1} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={se1} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={se2} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={se2} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={se3} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={se3} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={se4} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={se4} alt="CloudLogo"  />
                 </div>
             </Slider>
 

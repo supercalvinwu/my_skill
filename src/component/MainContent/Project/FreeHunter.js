@@ -17,30 +17,32 @@ function FreeHunter() {
         autoplaySpeed: 3000,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows : false
     };
     return (
         <div className="Project">
             <span className="title">Free Hunter</span>
 
-            <Slider {...settings}>
-                <div>
-                    <img style={{ marginLeft: 0 }} src={fh1} alt="CloudLogo" width={450} height={450} />
-                </div>
-                <div>
-                    <img style={{ marginLeft: 0 }} src={fh2} alt="CloudLogo" width={450} height={450} />
-                </div>
-                <div>
-                    <img style={{ marginLeft: 0 }} src={fh3} alt="CloudLogo" width={450} height={450} />
-                </div>
-                <div>
-                    <img style={{ marginLeft: 0 }} src={fh4} alt="CloudLogo" width={450} height={450} />
-                </div>
-                <div>
-                    <img style={{ marginLeft: 0 }} src={fh5} alt="CloudLogo" width={450} height={450} />
-                </div>
-            </Slider>
-
+            
+                <Slider {...settings}>
+                    <div>
+                        <img style={{ marginLeft: 0 }} src={fh1} alt="CloudLogo" />
+                    </div>
+                    <div>
+                        <img style={{ marginLeft: 0 }} src={fh2} alt="CloudLogo" />
+                    </div>
+                    <div>
+                        <img style={{ marginLeft: 0 }} src={fh3} alt="CloudLogo" />
+                    </div>
+                    <div>
+                        <img style={{ marginLeft: 0 }} src={fh4} alt="CloudLogo" />
+                    </div>
+                    <div>
+                        <img style={{ marginLeft: 0 }} src={fh5} alt="CloudLogo" />
+                    </div>
+                </Slider>
+            
             <span className="lable" style={{ marginBottom: 5 }}>Ref:</span>
             <a href={"https://freehunter.hk/"} target="_blank" rel="noopener noreferrer">Live Site</a>
 

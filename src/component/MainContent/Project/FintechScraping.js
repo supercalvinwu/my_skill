@@ -17,7 +17,8 @@ function FintechScraping() {
         autoplaySpeed: 3000,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows : false
     };
 
     return (
@@ -27,16 +28,16 @@ function FintechScraping() {
 
             <Slider {...settings}>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={fs1} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={fs1} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={fs2} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={fs2} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={fs3} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={fs3} alt="CloudLogo"  />
                 </div>
                 <div>
-                    <img style={{ marginLeft: 0 }} src={fs4} alt="CloudLogo" width={450} height={450} />
+                    <img style={{ marginLeft: 0 }} src={fs4} alt="CloudLogo"  />
                 </div>
 
 
