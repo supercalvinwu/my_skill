@@ -28,7 +28,7 @@ function BorrowingStatusUserView() {
 
             <span className="lable">Num of VM that you are holding:</span>
 
-            <div style={{ marginTop: 15, marginBottom: 5 }}>
+            <div style={{ marginTop: 15, marginBottom: 5, textAlign: 'left' }}>
 
                 <span style={{ fontSize: 12, fontWeight: 400 }}>You may borrow a maximum of {userLive.max_borrow} VM and you have borrowed </span>
 

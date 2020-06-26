@@ -15,7 +15,7 @@
 /src/secret
 
 # firebase hosting info
-/.firebase
+/firebase
 
 # misc
 .DS_Store
