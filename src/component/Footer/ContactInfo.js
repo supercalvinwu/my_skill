@@ -1,7 +1,7 @@
 import React from 'react'
 
-
-function ContactInfo() {
+function ContactInfo(props) {
+    
     return (
         <div className="ContactInfo">
             <span className="title">Contact Info</span>
@@ -25,4 +25,4 @@ function ContactInfo() {
     )
 }
 
-export default ContactInfo
+export default ContactInfo;
